@@ -2,4 +2,27 @@ body {
   margin: 0;
 }
 
+/* Westbourne Serif */
+@font-face {
+  font-family: 'Westbourne Serif';
+  src: url('./assets/fonts/WestbourneSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Westbourne Serif';
+  src: url('./assets/fonts/WestbourneSerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* SF Pro (system font stack) */
+:root {
+  --sf-pro: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--sf-pro);
+}
 

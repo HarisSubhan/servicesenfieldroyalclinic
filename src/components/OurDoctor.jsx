@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-
 const OurDoctor = () => {
   const doctors = [
     {
@@ -41,37 +40,84 @@ const OurDoctor = () => {
   const doctor = doctors[currentIndex];
 
   return (
-    <div style={{ backgroundColor: "#eaeaea"}}>
-      <Container>
-        <Card style={{backgroundColor: "#eaeaea",  border: "none" }} className="p-4">
+    <div style={{ backgroundColor: "#eaeaea" }}>
+      <Container className="px-3 px-md-4 px-lg-5">
+        <Card style={{ backgroundColor: "#eaeaea", border: "none" }} className="p-3 p-md-4 p-lg-5">
           <Row className="align-items-center">
-            <Col md={6}>
+            {/* Text content - order changes on mobile */}
+            <Col md={6} className="order-2 order-md-1">
               <div className={`fade-content ${fade ? "fade-in" : "fade-out"}`}>
-                <h1>Meet The</h1>
-                <h1>Hair Experts</h1>
-                <p>{doctor.description}</p>
+                <h1 className="fw-bold mb-2 mb-md-3" style={{ 
+                  fontSize: "clamp(2.5rem, 8vw, 5rem)" 
+                }}>
+                  Meet The
+                </h1>
+                <h1 className="fw-bold mb-3 mb-md-4" style={{ 
+                  marginLeft: "clamp(0px, 2vw, 250px)", 
+                  fontSize: "clamp(2rem, 5vw, 3rem)" 
+                }}>
+                  Hair Experts
+                </h1>
+                <p className="text-muted lh-lg" style={{ 
+                  fontSize: "clamp(0.9rem, 2.5vw, 1rem)" 
+                }}>
+                  {doctor.description}
+                </p>
               </div>
             </Col>
-            <Col md={6} className="text-center">
+            
+            {/* Image content - order changes on mobile */}
+            <Col md={6} className="text-center order-1 order-md-2 mb-4 mb-md-0">
               <div className={`fade-content ${fade ? "fade-in" : "fade-out"}`}>
-                <Image src={doctor.image} fluid rounded />
+                <Image 
+                  src={doctor.image} 
+                  fluid 
+                  rounded 
+                  style={{ 
+                    maxHeight: "clamp(300px, 50vh, 500px)",
+                    width: "auto",
+                    maxWidth: "100%"
+                  }} 
+                />
+                <h4 className="mt-3 fw-semibold">{doctor.name}</h4>
               </div>
+              
               <div className="d-flex justify-content-center mt-3 gap-3">
                 <FaArrowLeft
                   style={{ cursor: "pointer" }}
                   onClick={() => changeDoctor("prev")}
-                  size={24}
+                  size={window.innerWidth <= 768 ? 20 : 24}
+                  className="p-2 bg-light rounded-circle"
+                  aria-label="Previous doctor"
                 />
+                <span className="d-flex align-items-center">
+                  {currentIndex + 1} / {doctors.length}
+                </span>
                 <FaArrowRight
                   style={{ cursor: "pointer" }}
                   onClick={() => changeDoctor("next")}
-                  size={24}
+                  size={window.innerWidth <= 768 ? 20 : 24}
+                  className="p-2 bg-light rounded-circle"
+                  aria-label="Next doctor"
                 />
               </div>
             </Col>
           </Row>
         </Card>
       </Container>
+      
+      {/* Add CSS for fade animations */}
+      <style>{`
+        .fade-content {
+          transition: opacity 0.3s ease-in-out;
+        }
+        .fade-in {
+          opacity: 1;
+        }
+        .fade-out {
+          opacity: 0;
+        }
+      `}</style>
     </div>
   );
 };

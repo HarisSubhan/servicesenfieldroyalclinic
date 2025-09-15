@@ -1,3 +1,7 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .video-container {
   position: relative;
   width: 100%;
@@ -62,7 +66,7 @@
   margin-top: 80px !important;
 }
 
-.specialty-img {
+.specialty-imgs {
   width: 80px;
   height: 80px;
 }
@@ -74,7 +78,7 @@
 
 /* Tablets */
 @media (max-width: 768px) {
-  .specialty-img {
+  .specialty-imgs {
     width: 70px !important;
     height: 70px !important;
   }
@@ -86,7 +90,7 @@
 
 /* Large phones */
 @media (max-width: 425px) {
-  .specialty-img {
+  .specialty-imgs {
     width: 55px !important;
     height: 55px !important;
   }
@@ -98,7 +102,7 @@
 
 /* Small phones (375px & below) */
 @media (max-width: 375px) {
-  .specialty-img {
+  .specialty-imgs {
     width: 50px !important;
     height: 50px !important;
   }
@@ -110,7 +114,7 @@
 
 /* Extra small phones (320px) */
 @media (max-width: 320px) {
-  .specialty-img {
+  .specialty-imgs {
     width: 45px !important;
     height: 45px !important;
   }
@@ -124,7 +128,7 @@
 /* Hair prp  */
 
 .hairprp {
-  margin-top: 400px;
+  margin-top: 500px;
 }
 
 .hairprp-bg {
@@ -176,7 +180,7 @@
 /* Tablet screens (1024px and below) */
 @media (max-width: 1024px) {
   .hairprp {
-    margin-top: 410px;
+    margin-top: 550px;
   }
 
   .hairprp h1 {
@@ -193,7 +197,7 @@
 /* Small tablets (768px and below) */
 @media (max-width: 768px) {
   .hairprp {
-    margin-top: 500px; /* adjusted from 550 for smoother transition */
+    margin-top: 600px; /* adjusted from 550 for smoother transition */
     text-align: center;
   }
 
@@ -214,7 +218,7 @@
 /* Large phones (480px and below) */
 @media (max-width: 480px) {
   .hairprp {
-    margin-top: 565px !important; /* smoother than jumping to 150 */
+    margin-top: 865px !important; /* smoother than jumping to 150 */
   }
 
   .hairprp h1 {
@@ -232,7 +236,7 @@
 
 @media (max-width: 360px) {
   .hairprp {
-    margin-top: 850px !important ; 
+    margin-top: 1050px !important ; 
    
   }
 }
@@ -270,33 +274,7 @@
 
 
 /* Smooth scrolling for the entire HTML */
-html {
-  scroll-behavior: smooth;
-}
 
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
-}
 
 /* top call */
 .top-call {
@@ -325,8 +303,6 @@ html {
     max-width: none !important;
   }
 }
-
-
 
 
 /* Continuous Logo Rotation */
@@ -380,4 +356,33 @@ html {
   }
 }
 
+/* reduce */
 
+.specialty-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 220px; /* default for small screens */
+}
+
+@media (min-width: 768px) {
+  .specialty-img {
+    max-height: 300px; /* tablets */
+  }
+}
+
+@media (min-width: 992px) {
+  .specialty-img {
+    max-height: 400px; /* desktop */
+  }
+}
+
+@media (min-width: 1200px) {
+  .specialty-img {
+    max-height: 500px; /* very large screens */
+  }
+}
+
+.Westbourne{
+  font-family:sans-serif !important;
+}

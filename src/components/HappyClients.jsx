@@ -24,8 +24,8 @@ const HappyClients = () => {
   return (
     <div className="py-5" style={{ backgroundColor: "#eaeaea" }}>
       <Container>
-        <h1 className="text-center">Hear From Our</h1>
-        <h1 className="text-center mb-4">Happy Clients!</h1>
+        <h1 style={{fontFamily: 'var(--sf-pro)',fontSize:"80px"}} className="">Hear From Our</h1>
+        <h1 style={{fontFamily: 'var(--sf-pro)',fontSize:"80px"}} className="text-end mb-4 fst-italic">Happy Clients!</h1>
         <Row className="g-4">
           {clients.map((client, idx) => (
             <Col key={idx} xs={12} md={6} lg={4}>

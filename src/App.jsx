@@ -15,47 +15,6 @@ import WhatsApp from './components/WhatsApp';
 import TopCall from './components/TopCall';
 
 function App() {
-  
-  useEffect(() => {
-    
-    const handleAnchorClick = (e) => {
-      const target = e.target;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
-        const id = target.getAttribute('href').substring(1);
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    };
-
-    
-    document.addEventListener('click', handleAnchorClick);
-
-   
-    const originalScroll = window.scroll;
-    window.scroll = function(options) {
-      if (options && options.behavior === 'smooth') {
-        window.scrollTo({
-          top: options.top,
-          left: options.left,
-          behavior: 'smooth'
-        });
-      } else {
-        originalScroll.apply(this, arguments);
-      }
-    };
-
- 
-    return () => {
-      document.removeEventListener('click', handleAnchorClick);
-      window.scroll = originalScroll;
-    };
-  }, []);
 
   return (
     <>

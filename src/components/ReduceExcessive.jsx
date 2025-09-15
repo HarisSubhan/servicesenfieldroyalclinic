@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Col, Container, Image, Row, Carousel } from "react-bootstrap";
+
 
 const ReduceExcessive = () => {
   const images = [
@@ -33,7 +34,7 @@ const ReduceExcessive = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Detect screen resize
-  React.useEffect(() => {
+  useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -44,13 +45,15 @@ const ReduceExcessive = () => {
       <Container>
         <Card style={{ backgroundColor: "#eaeaea", border: "none" }}>
           <p className="text-center mt-5">BEFORE AND AFTER</p>
-          <h1 className="text-center">
-            Reduce Excessive <br /> Hairloss
+          <h1 className="p-3" style={{ fontSize: "70px" }}>
+            Reduce Excessive
           </h1>
-          <p className="text-center">
+          <h1 className="text-center fst-italic" style={{fontSize:"70px"}} >Hairloss</h1>
+          <p>
             HOVER OVER PHOTOS <br /> TO SEE THE AFTER
           </p>
 
+          {/* 👉 Desktop / Tablet Grid */}
           {!isMobile && (
             <Row className="justify-content-center mb-5 g-3">
               {images.map((img, i) => (
@@ -69,10 +72,6 @@ const ReduceExcessive = () => {
                     rounded
                     fluid
                     className="specialty-img shadow-sm"
-                    style={{
-                      // maxHeight: "220px",
-                      objectFit: "cover",
-                    }}
                   />
                 </Col>
               ))}
@@ -90,10 +89,6 @@ const ReduceExcessive = () => {
                       rounded
                       fluid
                       className="specialty-img shadow-sm"
-                      style={{
-                        // maxHeight: "1020px",
-                        objectFit: "cover",
-                      }}
                       onMouseEnter={() => setHoveredIndex(i)}
                       onMouseLeave={() => setHoveredIndex(null)}
                     />

@@ -7,13 +7,18 @@ const BookYourConsultation = () => {
     <div className="py-5" style={{ backgroundColor: "#1f1f21" }}>
       <Container>
         {/* Section Header */}
-        <div className="text-center mb-5">
-          <h1 className="fw-bold text-white">Your Journey to Confidence</h1>
-          <p className="text-white lead">
+        <div className="d-flex justify-content-center align-items-center text-center mb-5">
+          <Col xl={8}>
+            <h1 style={{  fontFamily: 'var(--sf-pro)',fontSize:"40px" }} className="fw-bold text-white">Your Journey to Confidence</h1>
+          <h2 style={{  fontFamily: 'var(--sf-pro)',fontSize:"80px" }} className="fst-italic text-end  text-white">Stay Here</h2>
+          </Col>
+          <Col xl={4}>
+            <p className="text-white lead">
             We understand hair loss is personal. Our proven treatments help
             restore not just your hair, but your confidence.
           </p>
-          <h2 className="fw-semibold text-white">Stay Here</h2>
+          </Col>
+          
         </div>
 
         {/* Main Row */}
@@ -32,8 +37,8 @@ const BookYourConsultation = () => {
           {/* Right Form Section */}
           <Col lg={8} md={7} xs={12}>
             <Card className="border-0 p-4 shadow-sm h-100">
-              <h1 className="fw-bold">Book Your</h1>
-              <h1 className="fw-bold mb-4">Consultation</h1>
+              <h1 style={{  fontFamily: 'var(--sf-pro)',fontSize:"60px" }} >Book Your</h1>
+              <h1 style={{  fontFamily: 'var(--sf-pro)',fontSize:"70px" }} className="fst-italic text-end mb-4">Consultation</h1>
 
               <Row className="gy-4">
                 {/* Left Text + Logo */}

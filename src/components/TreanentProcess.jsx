@@ -1,12 +1,32 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 const TreanentProcess = () => {
   return (
-    <Container fluid className='p-3 '>
-        <p className='text-center'>TREATMENT PROCESS</p>
-        <h1 className='text-center'>We Listen to your concerns carefully HOVER TO DISCOVER</h1>
+    <motion.div
+    initial={{ y: 150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 2 }}
+          viewport={{ once: true, amount: 0.3 }} 
+    >
+      <Container fluid className='p-3 mt-5 '>
+        <div className="text-center my-4">
+  <p className="fs-5 fw-semibold">TREATMENT PROCESS</p>
+
+  <h1 className="fw-bold display-3 display-md-2 display-sm-4">
+    We Listen to
+  </h1>
+
+  <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+    <h1 className="fw-bold display-4 display-md-3 m-0">
+      your concerns carefully
+    </h1>
+    <h6 className="text-muted mt-5">HOVER TO DISCOVER</h6>
+  </div>
+</div>
+
       
    <div
   style={{
@@ -118,6 +138,8 @@ const TreanentProcess = () => {
        
       
     </Container>
+    </motion.div>
+    
   )
 }
 

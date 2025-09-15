@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Container, Image } from "react-bootstrap";
+import { motion } from 'framer-motion';
+
 
 
 const CardSpecialty = () => {
@@ -40,17 +42,31 @@ const CardSpecialty = () => {
 
   return (
     <Container className="my-5">
-      <Card className="p-4 p-md-5 shadow-lg border-0 specialty-card text-center">
+      <Card className="p-4 p-md-5 shadow-lg border-0 specialty-card">
         {/* Section Label */}
-        <p className="text-uppercase text-muted small fw-bold mb-3">
+        <p className="text-uppercase text-muted small fw-bold mb-3 text-center">
           What We Do
         </p>
 
-        
-        <h1 style={{fontStyle:"SF Pro"}} className=" text-md-start fw-bold mb-5">
-          Hair PRP <br />
-          <span style={{fontStyle: "Westbourne Serif Free"}} className=" text-center text-dark"><span style={{color: "#ffffff"}} >000000</span>as a Specialty</span>
+        <motion.h1
+        initial={{ y: 150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 2 }}
+          viewport={{ once: true, amount: 0.3 }} 
+        >
+           <h1 style={{fontFamily: 'var(--sf-pro)', fontSize: windowWidth <= 768 ? (windowWidth <= 425 ? '28px' : '32px') : '60px'}} >
+          Hair PRP
+          <div className="d-flex gap-1 ">
+            <h1 className="fw-bold " style={{marginLeft: "100px", fontSize: windowWidth <= 768 ? (windowWidth <= 425 ? '20px' : '24px') : '50px'}}>
+            as a 
+          </h1>
+          <p className="fst-italic " style={{fontSize: windowWidth <= 768 ? (windowWidth <= 425 ? '20px' : '24px') : '50px'}} >Specialty</p>
+          </div>
+          
+          
         </h1>
+        </motion.h1>
+       
 
         
         <div
@@ -69,7 +85,7 @@ const CardSpecialty = () => {
                 src={img}
                 rounded
                 fluid
-                className="specialty-img shadow-sm"
+                className="specialty-imgs shadow-sm"
                 style={{
                   width: "80px",         
                   height: "80px",
@@ -84,7 +100,7 @@ const CardSpecialty = () => {
         </div>
 
         {/* Subtitle */}
-        <h4 className="fw-semibold mt-4">
+        <h4 style={{fontSize: "40px"}} className="fw-semibold mt-4 text-center">
           Choose a hair PRP surgeon <br />
           <span className="fst-italic fw-normal text-muted">
             With The Highest Level
